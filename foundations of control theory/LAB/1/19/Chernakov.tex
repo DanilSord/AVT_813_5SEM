@@ -135,80 +135,66 @@ top=1cm,bottom=1cm,bindingoffset=0cm]{geometry}
 		tabsize=4,                       % sets default tabsize to 2 spaces
 		title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 	}
-	
-	\section{Постановка задачи}
-	\begin{enumerate} 
-		\item Локализовать корни с помощью  построения графика (Desmos)	
-		\item Разработать программную реализацию трех методов уточнения корней:
-		\begin{enumerate} 
-			\item Ньютона,
-			\item простых итераций,
-			\item метода заданного в таблице вариантов.
-		\end{enumerate}
-		\item Произвести вычисления с различной точностью и сравнить количество итераций для нахождения корней различными методами.	
-	\end{enumerate}
-	\newpage  
+
+	\section{Цель работы}
 	
 	\section{Аналитическое решение задачи}
-
-		\begin{equation}
-			\begin{split}
-			
-				x\prime \prime +x\prime =t, x(0)=x\prime (0)=0 \\
-				x\rightarrow X(p) \\
-				x\prime\rightarrow pX(p) \\
-				x\prime\prime\rightarrow p^{2}X(p) \\
-				t\rightarrow\frac{1}{p^{2}} \\
-				p^{2}X(p)+pX(p)=\frac{1}{p^{2}} \\
-				p^{4}X(p)+p^{3}X(p)=1 \\
-				X(p)=\frac{1}{p^{4}+p^{3}}=\frac{1}{p^{3}(p+1)} \\
-			\end{split}
-		\end{equation}
-
+	$
+		x’ ’ +x’ =t, x(0)=x’ (0)=0 \\
+		x\rightarrow X(p) \\
+		x’\rightarrow pX(p) \\
+		x’’\rightarrow p^{2}X(p) \\
+		t\rightarrow\frac{1}{p^{2}} \\
+		p^{2}X(p)+pX(p)=\frac{1}{p^{2}} \\
+		p^{4}X(p)+p^{3}X(p)=1 \\
+		X(p)=\frac{1}{p^{4}+p^{3}}=\frac{1}{p^{3}(p+1)} \\
+		X(p)=\frac{p^{2}-p+1}{p^{3}}-\frac{1}{p+1}=1-t+\frac{t^{2}}{2}-exp(-t) \\
+	$
 	\newpage 
-	
+		\clearpage
 	\section{Структурные схемы в Matlab}
 	
-	\newpage 
+	\begin{figure}[h]
+		\center{\includegraphics[scale=0.42]{4.png}}
+		\caption{Структурная схема -- ДУ относительно старшей производной $x’’=t-x’$}
+	\end{figure}
+
+	\begin{figure}[h]
+		\center{\includegraphics[scale=0.45]{5.png}}
+		\caption{Структурная схема -- уравнение движения $x(t)=1-t+\frac{t^{2}}{2}-exp(-t)$}
+	\end{figure}
 	
+	\newpage 
+	\clearpage
 	\section{Полученные графики}
 	\begin{figure}[h]
-%		\center{\includegraphics[scale=0.5]{1.png}}
-		\caption{Контрольный пример}
+		\center{\includegraphics[scale=0.25]{1.png}}
+		\caption{Полученный результат -- ДУ относительно старшей производной $x’’=t-x’$}
 	\end{figure}
+
+	\begin{figure}[h]
+		\center{\includegraphics[scale=0.25]{2.png}}
+		\caption{Полученный результат --  уравнение движения $x(t)=1-t+\frac{t^{2}}{2}-exp(-t)$}
+	\end{figure}
+
+
+	\begin{figure}[h]
+		\center{\includegraphics[scale=0.25]{3.png}}
+		\caption{Полученный результат --  сравнение уравнения движения и ДУ относительно старшей производной}
+	\end{figure}
+
 	\newpage 
-	
+		\clearpage
 	\section{Выводы по задаче}
 	
 	\newpage 
-	
+		\clearpage
 	\section{Структурные схемы для примера 2}
 	
 	\newpage 
-	
-	\section{Графики}
+		\clearpage
+	\section{Графики и выводы}
 	
 	\newpage 
-	
-	\section{Заключение}
-	Исходя из расчётов программы можно сделать вывод о том, что меньше всего итераций занял метод Ньютона за ним следует метод половинного деления и в конце метод простых итераций. 
-	\newpage
-	
-	\section{Начальные приближения}
-	Исходя из построенного графика найдём необходимые отрезки для поиска корней уравнения. Всего в уравнении 3 корня это можно узнать по пересечению графика c осью абсцисс в точках:
-	\begin{enumerate} 
-		\item $x1 = 2.843$
-		\item $x2 = 0.693$
-		\item $x3 = -2.537$
-	\end{enumerate}
-	Рассмотрим интервалы для каждого корня (брать интервалы будем, опираясь на изменение знака функции на концах отрезка и на наличие единственного корня в этом отрезке):
-	\begin{enumerate} 
-		\item $[2 ; 10000]$
-		\item $[0 ;1]$
-		\item $[-3 ; -2]$
-	\end{enumerate} 
-	\newpage
-	
-	
-	
+		
 \end{document}
